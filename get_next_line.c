@@ -41,7 +41,20 @@ char	*get_next_line(int fd)
 	readed = 1;
 	line = NULL;
 	// 1. read from fd and add to linked list
+	read_and_stash(&stash, &readed);
 	// 2. extract from stash to line
 	// 3. clean up stash
 	return (line);
+}
+
+// use read to add char to the stash
+ 
+void	read_and_stash()
+{
+	char	*buff;
+
+	buf = malloc(sizeof(char)* BUFFER_SIZE + 1);
+	if (!buff)
+		return ;
+	read(fd, buf, BUFFER_SIZE)
 }
